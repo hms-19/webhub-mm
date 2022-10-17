@@ -1,0 +1,10 @@
+@media (min-width: 992px) {
+.rotate-lg-6 {
+    transform: rotate(6deg);
+    transition: .4s;
+}
+
+.rotate-lg-6:hover{
+    transform: rotate(0deg);
+}
+}
