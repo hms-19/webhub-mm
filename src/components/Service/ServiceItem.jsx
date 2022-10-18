@@ -3,6 +3,10 @@ import { useParams } from 'react-router';
 import services from './services.json'
 import service2 from '../../assets/images/service-2.jpg'
 import { motion } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
+import { Button } from 'react-daisyui';
+import { BiArrowBack } from 'react-icons/bi';
+import './ServiceItem.css'
 const ServiceItem = () => {
 
     let { serviceId } = useParams();
@@ -24,17 +28,13 @@ const ServiceItem = () => {
 
         {
             service.length !== 0 ?
-            <div className="container mt-12 mx-auto">
+            <div className="container mx-auto">
             
-              <section className="mb-32 text-gray-800">
+              <section className="mb-24 text-gray-800">
                 <div className="container mx-auto xl:px-32 text-center lg:text-left">
-                  <div className="grid lg:grid-cols-2 flex items-center">
+                  <div className="grid lg:grid-cols-2 items-center">
                     <div className="mb-12 lg:mb-0 z-50">
-                      <div className="block rounded-lg shadow-lg px-6 py-12 md:px-12 lg:-mr-14"
-                        style={{
-                            'background' : 'hsla(0, 0%, 100%, 0.55)',
-                            'backdropFilter' : 'blur(30px)',
-                        }}>
+                      <div className="block rounded-lg shadow-lg px-6 py-12 md:px-12 lg:-mr-14 service-card">
                         <h2 className="text-3xl font-bold mb-6">{service.title}</h2>
                         
             
@@ -83,6 +83,9 @@ const ServiceItem = () => {
                 </div>
               </section>
             
+              <NavLink to="/services" className='mt-3 mb-5 flex items-center justify-center'>
+                  <Button className='btn-primary' startIcon={<BiArrowBack className='text-3xl' />}>All Services</Button>
+              </NavLink>
             </div>
             : 
             <></>

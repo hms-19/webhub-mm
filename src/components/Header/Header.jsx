@@ -54,7 +54,7 @@ const Header = () => {
             'zIndex' : 200
           }}>
             <div className="flex-1">
-              <NavLink className="normal-case text-xl btn-ghost">
+              <NavLink className="normal-case text-xl">
                 <img src={logo} alt="" style={{
                   'width' : '47px',
                   'height' : '64px'

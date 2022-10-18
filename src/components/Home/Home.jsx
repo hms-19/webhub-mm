@@ -35,6 +35,7 @@ const Home = () => {
             </div>
             <div className='shadow-1'></div>
                     
+              <div className="overflow-hidden">
               <span className="absolute animate-pulse -right-10 top-[190px] z-[-1]">
                 <svg
                     width="34"
@@ -255,7 +256,7 @@ const Home = () => {
                       />
                 </svg>
               </span>
-              <span className="absolute animate-b -left-7 -bottom-7 z-[-1]">
+              <span className="absolute animate-bounce -left-7 -bottom-7 z-[-1]">
                 <svg
                     width="107"
                     height="134"
@@ -825,6 +826,7 @@ const Home = () => {
                       />
                 </svg>
               </span>
+              </div>
           </div>
         </div>
       </section>

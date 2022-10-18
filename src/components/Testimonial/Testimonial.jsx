@@ -3,9 +3,16 @@ import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from "pure-re
 import "pure-react-carousel/dist/react-carousel.es.css";
 import {BiArrowBack} from "react-icons/bi";
 import './Testimonial.css'
+import { motion } from 'framer-motion'
 
 const Testimonial = () => {
   return (
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.4 }}
+    >
     <div>
         <div className="flex items-center justify-between w-full absolute z-0">
             <div className="w-1/5" />
@@ -340,6 +347,7 @@ const Testimonial = () => {
             </CarouselProvider>
         </div>
     </div>
+    </motion.div>
 )
 }
 

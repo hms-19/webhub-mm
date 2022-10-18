@@ -11,11 +11,11 @@ import ServiceItem from "./components/Service/ServiceItem";
 import NotFound from "./components/NotFound/NotFound";
 import Blog from "./components/Blog/Blog";
 import Slider from "./components/PageSlider/Slider";
+import Outline from "./components/Course/Outline";
 
 function App() {
 
   const location = useLocation();
-
   return (
     <div>
        <Header />    
@@ -30,6 +30,7 @@ function App() {
               <Route path="services" element={<Service />} exact />
               <Route path="services/:serviceId" element={<ServiceItem />} />
               <Route path="courses" element={<Course />} />
+              <Route path="courses/:courseId" element={<Outline />} />
               <Route path="testimonial" element={<Testimonial />} />
               <Route path="blogs" element={<Blog />} />
               <Route path="aboutus" element={<About />} />
