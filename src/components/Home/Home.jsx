@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from 'react-daisyui';
 import { BiArrowBack } from 'react-icons/bi';
 import { NavLink } from 'react-router-dom';
+import { Zoom,Bounce } from 'react-reveal';
 
 const Home = () => {
 
@@ -28,10 +29,15 @@ const Home = () => {
               // 'backdropFilter' : 'saturate(200%) blur(25px)',
               'marginTop' : '100px'
             }}>
-              <h1 className="text-4xl sm:text-6xl xl:text-7xl font-bold tracking-tight text-indigo-100 mb-12"><span className="text-primary">WEBHUB Myanmar </span> stands for your business <br /> and for your Skills.</h1>
-              <NavLink to='/services'>
-                <Button color='primary' endIcon={<BiArrowBack className='text-2xl rotate-180' />}>Services</Button>
-              </NavLink>
+              <Zoom top>
+                <h1 className="text-4xl sm:text-6xl xl:text-7xl font-bold tracking-tight text-indigo-100 mb-12"><span className="text-primary">WEBHUB Myanmar </span> stands for your business and<br />  improve skill for young people.</h1>
+              </Zoom>
+              <Bounce left>
+                <NavLink to='/services'>
+                  <Button color='primary' endIcon={<BiArrowBack className='text-2xl rotate-180' />}>Services</Button>
+                </NavLink>
+              </Bounce>
+              
             </div>
             <div className='shadow-1'></div>
                     

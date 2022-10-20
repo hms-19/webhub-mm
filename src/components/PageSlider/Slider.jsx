@@ -14,7 +14,6 @@ const Slider = () => {
 
     useEffect(() => {
       let pathname = location.pathname.split('/')[1]
-      console.log(pathname)
       let index  = paths.indexOf(pathname)
       
       if(index == paths.length - 1){

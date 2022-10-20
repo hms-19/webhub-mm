@@ -1,12 +1,13 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-
+import { Flip} from 'react-reveal'
 const Card = ({services}) => {
   return (
     <>
         {
             services.map(service => (
                 <div key={service.id}>
+                    <Flip right>
                     <NavLink to={`/services/${service.title.toLowerCase()
                         .replace(/ /g, '-')
                         .replace(/[^\w-]+/g, '')}`}>
@@ -35,6 +36,8 @@ const Card = ({services}) => {
                         <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
                     </div>
                     </NavLink>
+                    </Flip>
+                    
                 </div>
             ))
         }

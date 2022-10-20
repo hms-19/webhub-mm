@@ -5,6 +5,8 @@ import { useParams } from 'react-router'
 import { NavLink } from 'react-router-dom'
 import lists from './courses.json'
 import { motion } from 'framer-motion'
+import {Bounce } from 'react-reveal'
+import parse from 'html-react-parser'
 const Outline = () => {
 
   const {courseId} = useParams()
@@ -28,11 +30,15 @@ const Outline = () => {
             <>
                 <div className="grid grid-cols-1 md:grid-cols-2 mx-auto gap-5 container mt-3">
                     <div>
-                        <img src={course.image} className='w-full object-cover origin-center' alt="" /><br />
-                        <h2 className='text-3xl text-bold'>
-                            {course.title}
-                        </h2>
-                        <p className="text-justify text-bold">
+                        <Bounce>
+                            <img src={course.image} className='w-full object-cover origin-center' alt="" />
+                        </Bounce>
+                        <br />
+                        <Bounce>
+                            <h2 className='text-3xl text-bold'>
+                                {course.title}
+                            </h2>
+                            <p className="text-justify text-bold">
                             {course.description}
                         </p>
                         <div className="flex justify-between items-center">
@@ -51,18 +57,22 @@ const Outline = () => {
                         <NavLink to="/courses" className='hidden md:block mt-3'>
                             <Button className='btn-primary' startIcon={<BiArrowBack className='text-3xl' />}>All Courses</Button>
                         </NavLink>
+                        </Bounce>                     
+                        
                     </div>
-                    <div>
-                        <h3 className='text-3xl text-bold'>
-                            Outline
-                        </h3>
-                        <p className="mt-3 text-justify">
-                            {course.outline}
-                        </p>
-                        <NavLink to="/courses" className='md:hidden my-5  flex items-center justify-center'>
-                            <Button className='btn-primary' startIcon={<BiArrowBack className='text-3xl' />}>All Courses</Button>
-                        </NavLink>
-                    </div>
+                    <Bounce>
+                        <div>
+                            <h3 className='text-3xl text-bold'>
+                                Outline
+                            </h3>
+                            <p className="mt-3 md:ml-3 text-justify">
+                                {parse(`${course.outline}`)}
+                            </p>
+                            <NavLink to="/courses" className='md:hidden my-5  flex items-center justify-center'>
+                                <Button className='btn-primary' startIcon={<BiArrowBack className='text-3xl' />}>All Courses</Button>
+                            </NavLink>
+                        </div>
+                    </Bounce>
                 </div>
             </>
             :

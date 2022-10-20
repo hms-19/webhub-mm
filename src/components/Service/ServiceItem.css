@@ -1,11 +1,3 @@
-@media screen and (min-width : 1240px){
-    .service-card{
-        background : hsla(0, 0%, 100%, 0.55) !important;
-        backdrop-filter : blur(30px) !important;
-    }
-}
-
-
 .service-card{
-    background : hsla(0, 0%, 100%, .6) !important;
+    background : hsla(0, 0%, 100%, .9) !important;
 }
