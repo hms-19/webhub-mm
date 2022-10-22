@@ -175,12 +175,13 @@ const Contact = () => {
                             py-3
                             px-[14px]
                             text-body-color text-base
-                            border border-gray-700
-                            bg-gray-700
                             outline-none
                             focus-visible:shadow-none
-                            focus:border-primary
                             "
+                            style={{
+                              'backgroundColor' : '#333',
+                              'border' : "1px solid #333"
+                            }}
                             />
                       </div>
                       <div className="mb-6">
@@ -193,12 +194,16 @@ const Contact = () => {
                             py-3
                             px-[14px]
                             text-body-color text-base
-                            border border-gray-700
+                       
                             outline-none
-                            bg-gray-700
+                      
                             focus-visible:shadow-none
                             focus:border-primary
                             "
+                            style={{
+                              'backgroundColor' : '#333',
+                              'border' : "1px solid #333"
+                            }}
                             />
                       </div>
                       <div className="mb-6">
@@ -211,12 +216,16 @@ const Contact = () => {
                             py-3
                             px-[14px]
                             text-body-color text-base
-                            border border-gray-700
+                   
                             outline-none
-                            bg-gray-700
+               
                             focus-visible:shadow-none
-                            focus:border-primary
+                  
                             "
+                            style={{
+                              'backgroundColor' : '#333',
+                              'border' : "1px solid #333"
+                            }}
                             />
                       </div>
                       <div className="mb-6">
@@ -229,13 +238,17 @@ const Contact = () => {
                             py-3
                             px-[14px]
                             text-body-color text-base
-                            border border-gray-700
+                        
                             resize-none
                             outline-none
-                            bg-gray-700
+                       
                             focus-visible:shadow-none
-                            focus:border-primary
+                     
                             "
+                            style={{
+                              'backgroundColor' : '#333',
+                              'border' : "1px solid #333"
+                            }}
                             ></textarea>
                       </div>
                       <div>
@@ -246,11 +259,11 @@ const Contact = () => {
                             text-white
                             bg-primary
                             rounded
-                            border border-primary
+                            bg-primary
                             p-3
                             transition
-                            hover:bg-opacity-90
                             "
+                           
                             >
                         Send Message
                         </button>

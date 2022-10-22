@@ -18,7 +18,7 @@ const Blog = () => {
           </div>
         </div>
       </section>
-      <div className="flex items-center justify-center lg:px-0 sm:px-6 px-4">
+      <div className="flex items-center justify-center lg:px-0 sm:px-6 px-4 mb-4">
       
               <div className="lg:w-3/5 w-full  flex items-center justify-between border-t border-gray-200">
                   <div className="flex items-center pt-3 text-gray-500 hover:text-gray-100 cursor-pointer">

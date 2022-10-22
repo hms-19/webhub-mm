@@ -7,7 +7,7 @@ const Card = ({services}) => {
         {
             services.map(service => (
                 <div key={service.id}>
-                    <Flip right>
+                    <Flip left>
                     <NavLink to={`/services/${service.title.toLowerCase()
                         .replace(/ /g, '-')
                         .replace(/[^\w-]+/g, '')}`}>
@@ -30,14 +30,13 @@ const Card = ({services}) => {
                             </div>
                             <p className="mb-2 font-bold">{service.title}</p>
                             <p className="text-sm leading-5 text-gray-300">
-                                {service.description.slice(0, 100)}<span className="text-primary">Learn More...</span>
+                                {service.description.slice(0, 100)}<span className="text-primary block">Learn More...</span>
                             </p>
                         </div>
                         <div className="w-full h-1 ml-auto duration-300 origin-left transform scale-x-0 bg-deep-purple-accent-400 group-hover:scale-x-100" />
                     </div>
                     </NavLink>
                     </Flip>
-                    
                 </div>
             ))
         }

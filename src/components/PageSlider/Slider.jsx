@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { BiArrowBack } from 'react-icons/bi'
 import { NavLink, useLocation } from 'react-router-dom'
-
+import { motion } from 'framer-motion'
 const Slider = () => {
 
   const [leftPage, setLeftPage] = useState('contactus')
@@ -32,14 +32,24 @@ const Slider = () => {
   return (
     <div className='flex w-full justify-between px-3'>
         <NavLink to={leftPage}>
-          <div className='rounded-full w-12 h-12 fixed top-1/2 left-1 md:left-3 z-50 border-2xl bg-primary flex justify-center items-center text-3xl '>
+          <motion.div animate={{
+            scale: [1, 1.5, 1.5, 1, 1],
+            rotate: [0, 0, 100, 100, 0],
+            borderRadius: ["50%", "20%", "30%", "40%", "50%"],
+            transition : {type: "spring", stiffness: 100} ,
+          }} className='rounded-full w-10 h-10 fixed top-1/2 left-1 md:left-3 z-50 border-2xl bg-primary flex justify-center items-center text-2xl hover:opacity-50 transition duration-300'>
               <BiArrowBack />
-          </div>
+          </motion.div>
         </NavLink>
         <NavLink to={rightPage}>
-          <div className='rounded-full w-12 h-12 fixed top-1/2 right-1 md:right-3 z-50 border-2xl bg-primary flex justify-center items-center text-3xl '>
+          <motion.div animate={{
+            scale: [1, 1.5, 1.5, 1, 1],
+            rotate: [0, 0, 100, 100, 0],
+            borderRadius: ["50%", "20%", "30%", "40%", "50%"],
+            transition : {type: "spring", stiffness: 100} ,
+          }}   className='rounded-full w-10 h-10 fixed top-1/2 right-1 md:right-3 z-50 border-2xl bg-primary flex justify-center items-center text-2xl hover:opacity-50 transition duration-300'>
               <BiArrowBack className='rotate-180' />
-          </div>
+          </motion.div>
         </NavLink>
     </div>
   )

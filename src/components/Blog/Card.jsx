@@ -8,7 +8,7 @@ const Card = () => {
         {
             blogs.map(blog => (
                 <Flip key={blog.id} left>
-                    <article className="flex flex-col dark:bg-gray-800 transition duration-700 hover:bg-gray-900 rounded-2xl">
+                    <article className="flex flex-col transition duration-700 rounded-2xl">
                         <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
                         <img alt="" className="object-cover rounded-t-2xl w-full h-52 dark:bg-gray-500" src={blog.image} />
                         </a>

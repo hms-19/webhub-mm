@@ -5,7 +5,7 @@ import './Header.css'
 import { BiMenuAltRight } from "react-icons/bi";
 import { BiX } from "react-icons/bi";
 import $ from 'jquery'
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/logo-shadow.svg'
 const Header = () => {
 
 
@@ -54,10 +54,10 @@ const Header = () => {
             'zIndex' : 200
           }}>
             <div className="flex-1">
-              <NavLink className="normal-case text-xl">
+              <NavLink to='/' className="normal-case text-xl">
                 <img src={logo} alt="" style={{
-                  'width' : '47px',
-                  'height' : '64px'
+                  'width' : '37px',
+                  'height' : '44px'
                 }} />
               </NavLink>
             </div>
@@ -92,21 +92,29 @@ const Header = () => {
                 </Menu.Item>
               </Menu>
             </div>
-            <Button className='toggle-sidebar-btn' style={{
-              'display' : 'none'
-            }} shape="square">
-              {
+            
+
+            {
                 isToggle ? 
-                <BiX onClick={toggleSidebar} style={{
+                <Button onClick={toggleSidebar} className='toggle-sidebar-btn' style={{
+                  'display' : 'none'
+                }} shape="square">
+                  <BiX style={{
                   'fontSize' : '36px'
-                }} />
+                  }} />
+                </Button>
+                
                 :
-                <BiMenuAltRight onClick={toggleSidebar} style={{
-                  'fontSize' : '36px'
-                }} />
+                
+                <Button onClick={toggleSidebar} className='toggle-sidebar-btn' style={{
+                  'display' : 'none'
+                  }} shape="square">
+                  <BiMenuAltRight onClick={toggleSidebar} style={{
+                    'fontSize' : '36px'
+                  }} />
+                </Button>
 
               }
-            </Button>
           </Navbar>
         </div>
       )

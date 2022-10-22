@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router';
 import services from './services.json'
-import service2 from '../../assets/images/service-2.jpg'
+import service2 from '../../assets/images/service.png'
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import { Button } from 'react-daisyui';
@@ -33,7 +33,7 @@ const ServiceItem = () => {
             
               <section className="mb-24 text-gray-800">
                 <div className="container mx-auto xl:px-32 text-center lg:text-left">
-                  <div className="grid lg:grid-cols-2 items-center">
+                  <div className="grid lg:grid-cols-2 ">
                     <Zoom left>
                       <div className="mb-12 lg:mb-0 z-50">
                         <div className="block rounded-lg shadow-lg px-6 py-12 md:px-12 lg:-mr-14 service-card">
@@ -77,7 +77,7 @@ const ServiceItem = () => {
                     </Zoom>
                     <Zoom right>
                       <div>
-                        <img src={service2} className="w-full object-cover rounded-lg shadow-lg transition duration-700 ease-in-out hover:rotate-12"
+                        <img src={service2} className="transition duration-700 ease-in-out hover:rotate-12"
                         style={{
                           'height' : '400px'
                         }}

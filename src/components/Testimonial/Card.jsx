@@ -20,13 +20,13 @@ const Card = () => {
                             <Bounce left>
                                 <div className="md:mt-12 lg:mt-0 mb-12 lg:mb-0">
                                     <div className="relative block rounded-lg shadow-lg px-6 py-12 md:px-12 lg:-mr-14" style={{
-                                        'background': 'hsla(0, 0%, 100%, 0.55)',
-                                        'backdropFilter': 'blur(30px)',
+                                        'background': 'hsla(0, 0%, 100%, 0.8)',
+                                        'backdropFilter': 'blur(0px)',
                                         'zIndex': 1
                                     }}>
                                     <h2 className="text-3xl font-bold mb-2 text-primary">{customer.name}</h2>
                                     <p className="font-semibold mb-4">{customer.job}</p>
-                                    <p className="text-gray-600 mb-6">
+                                    <p className="text-gray-700 mb-6">
                                         {customer.comment}
                                     </p>
                                     <ul className="flex justify-center md:justify-start">

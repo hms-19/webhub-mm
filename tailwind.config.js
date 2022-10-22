@@ -11,7 +11,7 @@ module.exports = {
       {
         mytheme: {
         
-            "primary": "#4361EE",
+            "primary": "#7209B7",
                     
             "secondary": "#D926A9",
                     
@@ -36,7 +36,7 @@ module.exports = {
     logs: true,
     rtl: false,
     prefix: "",
-    darkTheme: "dark",
+    darkTheme: "black",
   },
   theme : {
     container: {

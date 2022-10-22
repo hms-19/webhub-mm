@@ -24,13 +24,9 @@ const Home = () => {
 
         <div className="container mx-auto px-6 md:px-12 xl:px-32">
           <div className="relative w-100 text-center text-gray-800">
-            <div className=" block" style={{
-              // 'backgroundColor' : 'hsla(0, 0%, 100%, 0.8)',
-              // 'backdropFilter' : 'saturate(200%) blur(25px)',
-              'marginTop' : '100px'
-            }}>
+            <div className=" block page-title">
               <Zoom top>
-                <h1 className="text-4xl sm:text-6xl xl:text-7xl font-bold tracking-tight text-indigo-100 mb-12"><span className="text-primary">WEBHUB Myanmar </span> stands for your business and<br />  improve skill for young people.</h1>
+                <h1 className="text-4xl xs:text-5xl sm:text-6xl xl:text-7xl text-semibold text-indigo-100 mb-12"><span className="text-primary">WEBHUB Myanmar </span> <br /> For Your Business & Career</h1>
               </Zoom>
               <Bounce left>
                 <NavLink to='/services'>
@@ -42,7 +38,7 @@ const Home = () => {
             <div className='shadow-1'></div>
                     
               <div className="overflow-hidden">
-              <span className="absolute animate-pulse -right-10 top-[190px] z-[-1]">
+              <span className="absolute animate-pulse md:-right-10 md:top-[190px] z-[-1]">
                 <svg
                     width="34"
                     height="134"
