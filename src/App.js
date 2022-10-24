@@ -12,33 +12,40 @@ import NotFound from "./components/NotFound/NotFound";
 import Blog from "./components/Blog/Blog";
 import Slider from "./components/PageSlider/Slider";
 import Outline from "./components/Course/Outline";
+import Detail from "./components/Blog/Detail";
+import { useEffect, useState } from "react";
+import Social from "./components/Social/Social";
 
 function App() {
 
   const location = useLocation();
+
   return (
     <div>
-       <Header />    
-        
-        <Slider />
+
+        <Header />    
           
-        {/* Our Routes   */}
-        <AnimatePresence exitBeforeEnter>
+          <Slider />
+          <Social />
+            
+          {/* Our Routes   */}
+          <AnimatePresence exitBeforeEnter>
 
-          <Routes key={location.pathname} location={location}>
-              <Route path="/" element={<Home />} exact />
-              <Route path="services" element={<Service />} exact />
-              <Route path="services/:serviceId" element={<ServiceItem />} />
-              <Route path="courses" element={<Course />} />
-              <Route path="courses/:courseId" element={<Outline />} />
-              <Route path="testimonial" element={<Testimonial />} />
-              <Route path="blogs" element={<Blog />} />
-              <Route path="aboutus" element={<About />} />
-              <Route path="contactus" element={<Contact />} />
-              <Route path='*' element={<NotFound />} />
-          </Routes>
+            <Routes key={location.pathname} location={location}>
+                <Route path="/" element={<Home />} exact />
+                <Route path="services" element={<Service />} exact />
+                <Route path="services/:serviceId" element={<ServiceItem />} />
+                <Route path="courses" element={<Course />} />
+                <Route path="courses/:courseId" element={<Outline />} />
+                <Route path="testimonial" element={<Testimonial />} />
+                <Route path="blogs" element={<Blog />} />
+                <Route path="blogs/:blogId" element={<Detail />} />
+                <Route path="aboutus" element={<About />} />
+                <Route path="contactus" element={<Contact />} />
+                <Route path='*' element={<NotFound />} />
+            </Routes>
 
-        </AnimatePresence>
+          </AnimatePresence>
     </div>
   );
 }

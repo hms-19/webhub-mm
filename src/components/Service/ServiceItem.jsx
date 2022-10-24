@@ -1,22 +1,37 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router';
-import services from './services.json'
-import service2 from '../../assets/images/service.png'
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import { Button } from 'react-daisyui';
 import { BiArrowBack } from 'react-icons/bi';
-import { Zoom } from 'react-reveal'
+import { Bounce, Zoom } from 'react-reveal'
 import './ServiceItem.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { getSingleService, singleService } from '../../redux/features/services/serviceSlice';
+import { api } from '../../api';
+import { CircleLoader } from 'react-spinners'
+
+
 const ServiceItem = () => {
 
-    let { serviceId } = useParams();
+  const dispatch = useDispatch()
+  const { serviceId } = useParams()
 
-    let [service,setService] = useState({})
+  //get Service
 
-    useEffect(() => {
-        setService(...services.filter(s => s.title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '') === serviceId))
-    },[])
+  const getService = async  () => {
+
+    const res = await api.get(`/services/${serviceId}`).catch(err => console.log(err))
+
+    dispatch(singleService(res.data.data))
+  }
+
+
+  useEffect(() => {
+    getService()
+  },[])
+
+  const service = useSelector(getSingleService)
 
   return (
     <>
@@ -28,16 +43,16 @@ const ServiceItem = () => {
         >
 
         {
-            service.length !== 0 ?
+             JSON.stringify(service) !== '{}' ?
             <div className="container mx-auto">
             
               <section className="mb-24 text-gray-800">
-                <div className="container mx-auto xl:px-32 text-center lg:text-left">
-                  <div className="grid lg:grid-cols-2 ">
+                <div className="container mx-auto xl:px-18 text-center lg:text-left">
+                  <div className="grid lg:grid-cols-2 items-center">
                     <Zoom left>
                       <div className="mb-12 lg:mb-0 z-50">
                         <div className="block rounded-lg shadow-lg px-6 py-12 md:px-12 lg:-mr-14 service-card">
-                          <h2 className="text-3xl font-bold mb-6">{service.title}</h2>
+                          <h2 className="text-3xl font-bold mb-6">{service.name}</h2>
                           
               
                           <div className="flex flex-col md:flex-row md:justify-around lg:justify-between mb-6 mx-auto">
@@ -77,23 +92,23 @@ const ServiceItem = () => {
                     </Zoom>
                     <Zoom right>
                       <div>
-                        <img src={service2} className="transition duration-700 ease-in-out hover:rotate-12"
-                        style={{
-                          'height' : '400px'
-                        }}
-                          alt="" />
+                        <img src={service.image} className="w-full object-cover transition duration-700 ease-in-out hover:scale-125" />
                       </div>
                     </Zoom>
                   </div>
                 </div>
               </section>
             
-              <NavLink to="/services" className='mt-3 mb-5 flex items-center justify-center'>
-                  <Button className='btn-primary' startIcon={<BiArrowBack className='text-3xl' />}>All Services</Button>
-              </NavLink>
+              <Bounce left>
+                <NavLink to="/services" className='mt-3 mb-5 flex items-center justify-center'>
+                    <Button className='btn-primary' startIcon={<BiArrowBack className='text-3xl' />}>All Services</Button>
+                </NavLink>
+              </Bounce>
             </div>
             : 
-            <></>
+            <div className='spinner'>
+                <CircleLoader color="#7209B7" />
+            </div>
         }
         </motion.div>
     </>

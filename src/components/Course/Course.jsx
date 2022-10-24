@@ -1,13 +1,33 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
 import Card from './Card'
-import courses from './courses.json'
-import { Bounce } from 'react-reveal'
+import { Bounce, Zoom } from 'react-reveal'
+import { useDispatch } from 'react-redux'
+import { setCourses } from '../../redux/features/courses/courseSlice';
+import { api } from '../../api'
 
 const Course = () => {
 
   const [openTab, setOpenTab] = useState(1);
+
+  const dispatch = useDispatch()
+  
+
+  //fetchCourses
+
+  const fetchCourses = async  () => {
+    let res = await api.get('/courses')
+                .catch(err => err)
+
+
+    dispatch(setCourses(res.data.data));
+
+  }
+
+  useEffect(() => {
+    fetchCourses()
+  },[])
 
   return (
     <>
@@ -95,7 +115,7 @@ const Course = () => {
                     <section className="text-gray-400">
                       <div className="container px-5 py-6 mx-auto">
                         <div className="flex flex-wrap -m-4">
-                          <Card courses={courses} />                          
+                          <Card />                          
                         </div>
                       </div>
                     </section>
@@ -104,24 +124,28 @@ const Course = () => {
                 <div className={openTab === 2 ? "block" : "hidden"} id="link2">
                   <div className="">
                   <section className="text-gray-400">
-                      <h3 className='text-4xl text-center mt-12'>
-                        Currently there is no course about mobile development
-                      </h3>
-                      <p className="text-center mt-6 text-2xl">
-                        We will inform when we are avilable.
-                      </p>
+                      <Zoom>
+                        <h3 className='text-2xl md:text-4xl text-center mt-12'>
+                          Currently there is no course about mobile development
+                        </h3>
+                        <p className="text-center mt-6 text-xl md:text-2xl">
+                          We will inform when we are avilable.
+                        </p>
+                      </Zoom>
                   </section>
                   </div>
                 </div>
                 <div className={openTab === 3 ? "block" : "hidden"} id="link3">
                   <div className="">
                   <section className="text-gray-400">
-                  <h3 className='text-4xl text-center mt-12'>
-                        Currently there is no courses about UI/UX.
-                      </h3>
-                      <p className="text-center mt-6 text-2xl">
-                        We will inform when we are avilable.
-                      </p>
+                      <Zoom>
+                        <h3 className='text-2xl md:text-4xl text-center mt-12'>
+                          Currently there is no courses about UI/UX.
+                        </h3>
+                        <p className="text-center mt-6 text-xl md:text-2xl">
+                          We will inform when we are avilable.
+                        </p>
+                      </Zoom>
                   </section>
                   </div>
                 </div>

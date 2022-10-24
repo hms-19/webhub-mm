@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { BiArrowBack } from 'react-icons/bi'
+import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
 import { NavLink, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 const Slider = () => {
@@ -38,7 +38,7 @@ const Slider = () => {
             borderRadius: ["50%", "20%", "30%", "40%", "50%"],
             transition : {type: "spring", stiffness: 100} ,
           }} className='rounded-full w-10 h-10 fixed top-1/2 left-1 md:left-3 z-50 border-2xl bg-primary flex justify-center items-center text-2xl hover:opacity-50 transition duration-300'>
-              <BiArrowBack />
+              <BiChevronLeft />
           </motion.div>
         </NavLink>
         <NavLink to={rightPage}>
@@ -48,7 +48,7 @@ const Slider = () => {
             borderRadius: ["50%", "20%", "30%", "40%", "50%"],
             transition : {type: "spring", stiffness: 100} ,
           }}   className='rounded-full w-10 h-10 fixed top-1/2 right-1 md:right-3 z-50 border-2xl bg-primary flex justify-center items-center text-2xl hover:opacity-50 transition duration-300'>
-              <BiArrowBack className='rotate-180' />
+              <BiChevronRight />
           </motion.div>
         </NavLink>
     </div>

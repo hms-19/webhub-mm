@@ -1,6 +1,9 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Flip, Bounce, Zoom } from 'react-reveal'
+import { NavLink } from 'react-router-dom';
+import { Button } from 'react-daisyui';
+import { BiArrowBack } from 'react-icons/bi';
 const About = () => {
   const [openTab, setOpenTab] = React.useState(1);
   return (
@@ -12,7 +15,7 @@ const About = () => {
         transition={{ duration: 0.4}}
         >
 
-        <section className="overflow-hidden">
+        <section className="overflow-hidden py-5">
         <div className="container">
             <div className="flex flex-wrap justify-between items-center -mx-4">
                 <div className="w-full lg:w-6/12 px-4">
@@ -633,34 +636,16 @@ const About = () => {
                     </Zoom>
                     <Zoom bottom>
                         <p className="text-base text-body-color mb-8">
-                            It is a long established fact that a reader will be distracted
-                            by the readable content of a page when looking at its layout.
-                            The point of using Lorem Ipsum is that it has a more-or-less.
+                        Webhub has been established as a software company for more than a year. We not only provide software services for businesses, but also provide technical knowledge sharing and courses for young people
                         </p>
                         <p className="text-base text-body-color mb-12">
-                            A domain name is one of the first steps to establishing your
-                            brand. Secure a consistent brand image with a domain name that
-                            matches your business.
+                            If you need software for your business, you can trust and hire WHM. If you want to know more about WHM's services , you can contact us 24/7 leaving message or cotact us within office time by phone call.
                         </p>
-                        <a
-                            href="javascript:void(0)"
-                            className="
-                            py-4
-                            px-10
-                            lg:px-8
-                            xl:px-10
-                            inline-flex
-                            items-center
-                            justify-center
-                            text-center text-white text-base
-                            bg-primary
-                            hover:bg-opacity-90
-                            font-normal
-                            rounded-lg
-                            "
-                            >
-                        Get Started
-                        </a>
+                        <NavLink to={'/contactus'} >
+                                <Button color='primary' endIcon={<BiArrowBack className='rotate-180 text-xl' />}>
+                                    Contact
+                                </Button>
+                        </NavLink>
                     </Zoom>
                     </div>
                 </div>

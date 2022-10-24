@@ -1,22 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  data : []
+  data : {},
+  service : {}
 }
 
 export const serviceSlice = createSlice({
     name: 'services',
     initialState,
     reducers : {
-        fetchServices : (state,action) => {
-            return {
-                ...state,
-                data: action.payload
-            }
+        setServices : (state,action) => {
+            state.data = action.payload
+        },
+        singleService : (state,action) => {
+            state.service = action.payload  
         }
     }
 })
 
 
-export const { fetchServices } = serviceSlice.actions
+export const { setServices,singleService } = serviceSlice.actions
+export const getAllServices = (state) => state.services.data
+export const getSingleService = (state) => state.services.service
 export default serviceSlice.reducer

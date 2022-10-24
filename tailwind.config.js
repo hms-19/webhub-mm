@@ -4,7 +4,12 @@ module.exports = {
     'node_modules/react-daisyui/dist/**/*.js',
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
-  plugins: [require('daisyui')],
+  plugins: 
+  [
+  require('daisyui'),
+  require("tailwindcss/nesting"),
+  require("tailwindcss"),
+  require("autoprefixer")],
   daisyui: {
     styled: true,
     themes: [  

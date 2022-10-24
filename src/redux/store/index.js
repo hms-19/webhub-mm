@@ -1,8 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
-import serviceSlice from '../features/services/serviceSlice'
+import serviceReducer from '../features/services/serviceSlice'
+import courseReducer from '../features/courses/courseSlice'
+import testimonialReducer from '../features/testimonials/testimonialSlice'
+import blogReducer from '../features/blogs/blogSlice'
 
 export const store = configureStore({
   reducer: {
-    services : serviceSlice
+    services : serviceReducer,
+    courses : courseReducer,
+    testimonials : testimonialReducer,
+    blogs : blogReducer
+
   },
 })

@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import {Zoom, Bounce} from 'react-reveal'
+import Form from './Form'
 const Contact = () => {
   return (
     <motion.div
@@ -151,7 +152,7 @@ const Contact = () => {
                           <h4 className="font-bold text-dark text-xl mb-1">
                               Email Address
                           </h4>
-                          <p className="text-base text-body-color">info@webhubmm.com</p>
+                          <p className="text-base text-body-color">admin@webhubmm.com</p>
                         </div>
                     </div>
                   </Bounce>
@@ -163,113 +164,7 @@ const Contact = () => {
 
                   }
                 }>
-                  <form>
-                      <Zoom bottom>
-                      <div className="mb-6">
-                        <input
-                            type="text"
-                            placeholder="Your Name"
-                            className="
-                            w-full
-                            rounded
-                            py-3
-                            px-[14px]
-                            text-body-color text-base
-                            outline-none
-                            focus-visible:shadow-none
-                            "
-                            style={{
-                              'backgroundColor' : '#333',
-                              'border' : "1px solid #333"
-                            }}
-                            />
-                      </div>
-                      <div className="mb-6">
-                        <input
-                            type="email"
-                            placeholder="Your Email"
-                            className="
-                            w-full
-                            rounded
-                            py-3
-                            px-[14px]
-                            text-body-color text-base
-                       
-                            outline-none
-                      
-                            focus-visible:shadow-none
-                            focus:border-primary
-                            "
-                            style={{
-                              'backgroundColor' : '#333',
-                              'border' : "1px solid #333"
-                            }}
-                            />
-                      </div>
-                      <div className="mb-6">
-                        <input
-                            type="text"
-                            placeholder="Your Phone"
-                            className="
-                            w-full
-                            rounded
-                            py-3
-                            px-[14px]
-                            text-body-color text-base
-                   
-                            outline-none
-               
-                            focus-visible:shadow-none
-                  
-                            "
-                            style={{
-                              'backgroundColor' : '#333',
-                              'border' : "1px solid #333"
-                            }}
-                            />
-                      </div>
-                      <div className="mb-6">
-                        <textarea
-                            rows="6"
-                            placeholder="Your Message"
-                            className="
-                            w-full
-                            rounded
-                            py-3
-                            px-[14px]
-                            text-body-color text-base
-                        
-                            resize-none
-                            outline-none
-                       
-                            focus-visible:shadow-none
-                     
-                            "
-                            style={{
-                              'backgroundColor' : '#333',
-                              'border' : "1px solid #333"
-                            }}
-                            ></textarea>
-                      </div>
-                      <div>
-                        <button
-                            type="submit"
-                            className="
-                            w-full
-                            text-white
-                            bg-primary
-                            rounded
-                            bg-primary
-                            p-3
-                            transition
-                            "
-                           
-                            >
-                        Send Message
-                        </button>
-                      </div>
-                      </Zoom>
-                  </form>
+                 <Form />
                   <div>
                       <span className="absolute -top-10 -right-9 z-[-1]">
                         <svg
