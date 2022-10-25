@@ -15,6 +15,7 @@ import kpay from '../../assets/images/kpay.png'
 import aya from '../../assets/images/aya.png'
 import uab from '../../assets/images/uab.jpg'
 import './Outline.css'
+import noimage from '../../assets/images/noimage.png'
 
 const Outline = () => {
 
@@ -62,7 +63,7 @@ const Outline = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 mx-auto gap-5 container mt-3 mb-6">
                     <div>
                         <Bounce>
-                            <img src={course.image} className='w-full object-cover origin-center' alt="" />
+                            <img src={course.image ?? noimage} className='w-full object-cover origin-center' alt="" />
                         </Bounce>
                         <br />
                         <Bounce>

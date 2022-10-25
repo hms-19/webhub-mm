@@ -14,7 +14,7 @@ const Contact = () => {
       <div className="container">
           <div className="flex flex-wrap lg:justify-between -mx-4">
             <div className="w-full lg:w-1/2 xl:w-6/12 px-4">
-                <div className="max-w-[570px] my-12 lg:mb-0">
+                <div className="max-w-[570px] my-4 lg:mb-0">
       
                   <Zoom top>
                     <h2
@@ -159,11 +159,22 @@ const Contact = () => {
                 </div>
             </div>
             <div className="w-full lg:w-1/2 xl:w-5/12 px-4">
-                <div className="relative rounded-lg p-8 sm:p-12 shadow-lg" style={
-                  {
-
-                  }
-                }>
+                <div className="relative rounded-lg p-2 sm:p-6 shadow-lg" >
+                  <Bounce top>
+                    <h2
+                          className="
+                          text-dark
+                          mb-6
+                          font-bold
+                          text-[16px]
+                          sm:text-[18px]
+                          lg:text-[26px]
+                          xl:text-[22px]
+                          "
+                          >
+                          Any Review or Message for WHM
+                      </h2>
+                  </Bounce>
                  <Form />
                   <div>
                       <span className="absolute -top-10 -right-9 z-[-1]">

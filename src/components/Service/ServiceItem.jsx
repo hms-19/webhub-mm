@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getSingleService, singleService } from '../../redux/features/services/serviceSlice';
 import { api } from '../../api';
 import { CircleLoader } from 'react-spinners'
+import noimage from '../../assets/images/noimage.png'
 
 
 const ServiceItem = () => {
@@ -92,7 +93,7 @@ const ServiceItem = () => {
                     </Zoom>
                     <Zoom right>
                       <div>
-                        <img src={service.image} className="w-full object-cover transition duration-700 ease-in-out hover:scale-125" />
+                        <img src={service.image ?? noimage} className="w-full object-cover transition duration-700 ease-in-out hover:scale-125" />
                       </div>
                     </Zoom>
                   </div>

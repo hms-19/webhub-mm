@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Card from './Card'
 import { useDispatch } from 'react-redux'
@@ -7,18 +7,21 @@ import { api } from '../../api'
 const Blog = () => {
 
   const dispatch = useDispatch()
-  
+
+  const [isLoading, setIsLoading] = useState(false)
 
   //fetchBlogs
 
   const fetchBlogs = async  () => {
+    setIsLoading(true)
     let res = await api.get('/blogs')
                 .catch(err => err)
 
 
     dispatch(setBlogs(res.data.data));
-
+    setIsLoading(false)
   }
+
 
   useEffect(() => {
     fetchBlogs()
@@ -36,8 +39,7 @@ const Blog = () => {
 
       <section className="py-6 sm:py-12  dark:text-gray-100">
         <div className="container p-6 mx-auto space-y-8">
-          <Card />
-          
+          <Card isLoading={isLoading} />
         </div>
       </section>
     </motion.div>

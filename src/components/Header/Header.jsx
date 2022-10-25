@@ -49,7 +49,7 @@ const Header = () => {
     }, [location])
 
     return (
-        <div className="flex w-full py-2 px-2 component-preview items-center justify-center gap-2 font-sans">
+        <div className="flex w-full p-4 component-preview items-center justify-center gap-2 font-sans">
           <Navbar className='twMerge(className, "bg-primary text-primary-content")' style={{
             'zIndex' : 200
           }}>

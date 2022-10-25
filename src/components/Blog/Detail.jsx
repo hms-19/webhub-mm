@@ -10,6 +10,7 @@ import { BiArrowBack } from 'react-icons/bi';
 import { Bounce, Zoom } from 'react-reveal';
 import CircleLoader from 'react-spinners/CircleLoader';
 import parse from 'html-react-parser'
+import noimage from '../../assets/images/noimage.png'
 
 const Detail = () => {
 
@@ -49,7 +50,7 @@ const Detail = () => {
              <>
              <div className='container mx-auto my-4'>
                  <Zoom top>
-                     <img src={blog.image} style={{
+                     <img src={blog.image ?? noimage} style={{
                          'maxHeight' : '450px'
                      }} className='lg:w-3/4 w-full lg:px-32 md:px-16 px-2  my-3 mx-auto' />
                  </Zoom>

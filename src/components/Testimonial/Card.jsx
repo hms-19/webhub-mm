@@ -4,7 +4,7 @@ import { Bounce } from 'react-reveal'
 import { useSelector } from 'react-redux'
 import { getAllTestimonials } from '../../redux/features/testimonials/testimonialSlice'
 import { CircleLoader } from 'react-spinners'
-
+import user from '../../assets/images/user.png'
 const Card = () => {
 
    const testimonials = useSelector(getAllTestimonials)
@@ -21,20 +21,24 @@ const Card = () => {
                 
                         <Slide key={testimonial.id} index={index} tabIndex="null">
                             <div className="container px-1 md:px-6 mx-auto">
-                            <section className="text-gray-800 text-center lg:text-left">
+                            <section className="text-gray-400 text-center lg:text-left">
                                 <div className="md:px-12 my-8">
                                     <div className="mx-auto xl:px-32">
-                                        <div className="grid lg:grid-cols-2 items-center">
+                                        <div className="relative">
+                                        <div className="md:absolute md:top-3 md:right-3 ">
+                                            <Bounce top>
+                                                    <img src={user} className='rounded-full mx-auto block object-cover' style={{ 
+                                                        'width' : '100px',
+                                                        'height' : '100px'
+                                                    }} alt="" />
+                                            </Bounce>
+                                        </div>
                                         <Bounce left>
                                             <div className="md:mt-12 lg:mt-0 mb-12 lg:mb-0">
-                                                <div className="relative block rounded-lg shadow-lg px-6 py-12 md:px-12 lg:-mr-14" style={{
-                                                    'background': 'hsla(0, 0%, 100%, 0.8)',
-                                                    // 'backdropFilter': 'blur(0px)',
-                                                    'zIndex': 1
-                                                }}>
+                                                <div className="relative block rounded-lg shadow-lg px-6 py-12 md:px-12 lg:-mr-14">
                                                 <h2 className="text-3xl font-bold mb-2 text-primary">{testimonial.name}</h2>
                                                 <p className="font-semibold mb-4">{testimonial.field}</p>
-                                                <p className="text-gray-700 mb-6">
+                                                <p className="text-gray-200 mb-6">
                                                     {testimonial.comment}
                                                 </p>
                                                 <ul className="flex justify-center md:justify-start">
@@ -83,16 +87,7 @@ const Card = () => {
                                                 </div>
                                             </div>
                                         </Bounce>
-                                        
-                                        <Bounce right>
-                                            <div className="">
-                                                <img src={testimonial.image}
-                                                className="w-full md:w-2/3 object-cover object-center rounded-lg mx-auto block shadow-lg rotate-lg-6" style={{
-                                                    'height' : '450px',
-                                                    
-                                                }} />
-                                            </div>
-                                        </Bounce>
+                                                            
                                         </div>
                                     </div>
                                 </div>      

@@ -13,15 +13,19 @@ const Course = () => {
 
   const dispatch = useDispatch()
   
+  const [isLoading, setIsLoading] = useState(false)
 
   //fetchCourses
 
   const fetchCourses = async  () => {
+    setIsLoading(true)
     let res = await api.get('/courses')
                 .catch(err => err)
 
 
     dispatch(setCourses(res.data.data));
+
+    setIsLoading(false)
 
   }
 
@@ -115,7 +119,7 @@ const Course = () => {
                     <section className="text-gray-400">
                       <div className="container px-5 py-6 mx-auto">
                         <div className="flex flex-wrap -m-4">
-                          <Card />                          
+                          <Card isLoading={isLoading} />                          
                         </div>
                       </div>
                     </section>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from "framer-motion";
 import service from '../../assets/images/service.png'
 import Card from './Card';
@@ -10,15 +10,20 @@ import { api } from '../../api';
 const Service = () => {
 
   const dispatch = useDispatch()
-  
+
+  const [isLoading, setIsLoading] = useState(false)
 
   //fetchServices
 
   const fetchServices = async  () => {
+    setIsLoading(true)
     let res = await api.get('/services')
                 .catch(err => err)
 
     dispatch(setServices(res.data.data))
+
+    setIsLoading(false)
+
   }
 
 
@@ -40,12 +45,12 @@ const Service = () => {
               <div className='relative grid gap-5 sm:grid-cols-1 lg:grid-cols-3 items-center'>
                 <div className='col-span-2'>
                   <div className="relative grid gap-5 sm:grid-cols-1 lg:grid-cols-2">
-                      <Card />
+                      <Card isLoading={isLoading} />
                   </div>
                 </div>
                 <div className="flex flex-col justify-between overflow-hidden">
                     <Flip right>
-                    <img src={service} alt="" />
+                      <img src={service}  />
                     </Flip>
                 </div>
               </div>

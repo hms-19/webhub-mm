@@ -5,10 +5,14 @@ import { NavLink } from 'react-router-dom'
 import { getAllBlogs } from '../../redux/features/blogs/blogSlice'
 import CircleLoader from 'react-spinners/CircleLoader'
 import Pagination from '../Pagination/Pagination'
-
-const Card = () => {
+import { useGetAllBlogsQuery } from '../../redux/features/apiSlice'
+import noimage from '../../assets/images/noimage.png'
+const Card = ({isLoading}) => {
 
     const blogs = useSelector(getAllBlogs)
+
+
+
     const [currentPage, setCurrentPage] = useState(1)
     const [blogPerPage, setBlogPerPage] = useState(4)
 
@@ -21,6 +25,12 @@ const Card = () => {
     <>
     
         {
+            isLoading ?
+            <div className='spinner'>
+                <CircleLoader color="#7209B7" />
+            </div>
+            :
+
             currentBlogs.length > 0 ?
                 <>
                 <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
@@ -31,7 +41,7 @@ const Card = () => {
                             <Flip left>
                                 <article className="flex flex-col transition duration-700 rounded-2xl">
                                     <NavLink to={`/blogs/${blog.id}`}>
-                                    <img alt="" className="object-cover rounded-t-2xl w-full h-52 dark:bg-gray-500" src={blog.image} />
+                                    <img alt="" className="object-cover rounded-t-2xl w-full h-52 dark:bg-gray-500" src={blog.image ?? noimage} />
                                     </NavLink>
                                     <div className="flex flex-col flex-1 p-6">
                                     <NavLink to={`/blogs/${blog.id}`} className="text-lg font-semibold hover:text-violet-500 dark:text-violet-400">{blog.title.slice(0,50)}</NavLink>
@@ -51,9 +61,7 @@ const Card = () => {
                         <Pagination totalBlogs={blogs.length} blogPerPage={blogPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} />
                     </div>
                 </>
-            : <div className='spinner'>
-                <CircleLoader color="#7209B7" />
-            </div>
+            : <h3 className="text-center mt-12">No Blogs Available</h3>
         }
     </>
   )

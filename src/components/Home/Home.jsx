@@ -36,7 +36,10 @@ const Home = () => {
               </Bounce>
               
             </div>
-            <div className='shadow-1'></div>
+            
+            <Zoom>
+              <div className='shadow-1'></div>
+            </Zoom>
                     
               <div className="overflow-hidden">
               <span className="absolute home-animate-1 md:-right-10 md:top-[190px] z-[-1]">
