@@ -4,18 +4,24 @@ import Card from './Card'
 import { useDispatch } from 'react-redux'
 import { setBlogs } from '../../redux/features/blogs/blogSlice'
 import { api } from '../../api'
+import { useParams } from 'react-router'
+import { NavLink } from 'react-router-dom'
+import { Button } from 'react-daisyui'
+import { BiArrowBack } from 'react-icons/bi'
 const Blog = () => {
 
   const dispatch = useDispatch()
 
   const [isLoading, setIsLoading] = useState(false)
 
+  const { categorySlug } = useParams()
+
   //fetchBlogs
 
   const fetchBlogs = async  () => {
     setIsLoading(true)
-    let res = await api.get('/blogs')
-                .catch(err => err)
+    let res = await api.get(`/blogsbycategory?categorySlug=${categorySlug}`)
+                .catch(err => console.log('Something Was  Wrong'))
 
 
     dispatch(setBlogs(res.data.data));
@@ -39,6 +45,9 @@ const Blog = () => {
 
       <section className="py-6 sm:py-12  dark:text-gray-100">
         <div className="container p-6 mx-auto space-y-8">
+          <NavLink to='/blogs'>
+            <Button color='primary' startIcon={<BiArrowBack className='text-xl' />}>All Categories</Button>
+          </NavLink>
           <Card isLoading={isLoading} />
         </div>
       </section>

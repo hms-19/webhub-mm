@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom'
 import { getAllBlogs } from '../../redux/features/blogs/blogSlice'
 import CircleLoader from 'react-spinners/CircleLoader'
 import Pagination from '../Pagination/Pagination'
-import { useGetAllBlogsQuery } from '../../redux/features/apiSlice'
 import noimage from '../../assets/images/noimage.png'
 const Card = ({isLoading}) => {
 
@@ -39,13 +38,13 @@ const Card = ({isLoading}) => {
                      currentBlogs.map(blog => (
                         <div key={blog.id}>
                             <Flip left>
-                                <article className="flex flex-col transition duration-700 rounded-2xl">
-                                    <NavLink to={`/blogs/${blog.id}`}>
-                                    <img alt="" className="object-cover rounded-t-2xl w-full h-52 dark:bg-gray-500" src={blog.image ?? noimage} />
+                                <article className="flex flex-col shadow shadow-transparent hover:shadow-purple-800 transition duration-700  rounded-2xl">
+                                    <NavLink to={`/blogs/${blog.category.slug}/${blog.id}`}>
+                                    <img alt="" className="object-cover rounded-t-2xl w-full h-52 dark:bg-gray-500" src={blog.image} onError={e => { e.currentTarget.src = noimage; }} />
                                     </NavLink>
                                     <div className="flex flex-col flex-1 p-6">
-                                    <NavLink to={`/blogs/${blog.id}`} className="text-lg font-semibold hover:text-violet-500 dark:text-violet-400">{blog.title.slice(0,50)}</NavLink>
-                                    <h3 className="flex-1 py-2 text-xs uppercase leading-snug">{blog.category}</h3>
+                                    <NavLink to={`/blogs/${blog.category.slug}/${blog.id}`} className="text-lg font-semibold hover:text-violet-500 dark:text-violet-400">{blog.title.slice(0,50)}</NavLink>
+                                    <h3 className="flex-1 py-2 text-xs">{blog.category.name}</h3>
                                     <div className="flex flex-wrap justify-between  space-x-2 text-xs  dark:text-gray-400">
                                         <span>{blog.date}</span>
                                     </div>

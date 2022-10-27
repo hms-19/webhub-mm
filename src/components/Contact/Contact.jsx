@@ -11,9 +11,9 @@ const Contact = () => {
     transition={{ duration: 0.4}}
     >
     <section className="overflow-hidden relative z-10">
-      <div className="container">
-          <div className="flex flex-wrap lg:justify-between -mx-4">
-            <div className="w-full lg:w-1/2 xl:w-6/12 px-4">
+      <div className="container mx-auto ">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 ">
+            <div className="w-full">
                 <div className="max-w-[570px] my-4 lg:mb-0">
       
                   <Zoom top>
@@ -158,8 +158,8 @@ const Contact = () => {
                   </Bounce>
                 </div>
             </div>
-            <div className="w-full lg:w-1/2 xl:w-5/12 px-4">
-                <div className="relative rounded-lg p-2 sm:p-6 shadow-lg" >
+            <div className="w-full">
+                <div className="relative rounded-lg p-2 sm:p-6 shadow-lg " >
                   <Bounce top>
                     <h2
                           className="
@@ -175,7 +175,7 @@ const Contact = () => {
                           Any Review or Message for WHM
                       </h2>
                   </Bounce>
-                 <Form />
+                  <Form />
                   <div>
                       <span className="absolute -top-10 -right-9 z-[-1]">
                         <svg

@@ -63,7 +63,7 @@ const Outline = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 mx-auto gap-5 container mt-3 mb-6">
                     <div>
                         <Bounce>
-                            <img src={course.image ?? noimage} className='w-full object-cover origin-center' alt="" />
+                            <img src={course.image}  onError={e => { e.currentTarget.src = noimage; }} className='w-full object-cover origin-center' alt="" />
                         </Bounce>
                         <br />
                         <Bounce>

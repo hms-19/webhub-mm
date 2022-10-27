@@ -21,8 +21,10 @@ const Card = ({isLoading}) => {
              courses.map(course => (
                 <Zoom key={course.id}>
                     <div className="p-4 md:w-1/3">
-                        <div className="h-full shadow-lg hover:shadow-xl transition duration-300 rounded-lg overflow-hidden">
-                            <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={course.image ?? noimage} alt="blog" />
+                        <div className="h-full shadow shadow-transparent hover:shadow-purple-800 transition duration-700  rounded-lg overflow-hidden">
+                            <div className="overflow-hidden">
+                            <img className="lg:h-48 md:h-36 w-full object-cover object-center hover:scale-110 transition duration-700" src={course.image} onError={({currentTarget}) => { currentTarget.onerror = null;currentTarget.src = noimage; }} alt="blog" />
+                            </div>
                             <div className="p-6">
                             <h1 className="title-font text-lg font-medium text-white mb-3">{course.title}</h1>
                             <p className="mb-3">

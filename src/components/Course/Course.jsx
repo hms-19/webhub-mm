@@ -20,7 +20,7 @@ const Course = () => {
   const fetchCourses = async  () => {
     setIsLoading(true)
     let res = await api.get('/courses')
-                .catch(err => err)
+                .catch(err => console.log('Something Was  Wrong'))
 
 
     dispatch(setCourses(res.data.data));

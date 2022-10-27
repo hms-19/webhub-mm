@@ -23,7 +23,7 @@ const Card = ({isLoading}) => {
                 <div key={service.id}>
                     <Flip left>
                     <NavLink to={`/services/${service.id}`}>
-                    <div className="flex flex-col justify-between overflow-hidden text-left transition duration-500 ghost rounded  group">
+                    <div className="flex flex-col justify-between shadow shadow-transparent hover:shadow-purple-800 transition duration-700 overflow-hidden text-left  rounded  group">
                         <div className="p-5">
                             <div className="flex items-center justify-center w-10 h-10 mb-4">
                                 <img src={service.logo ?? noimage} alt="" />

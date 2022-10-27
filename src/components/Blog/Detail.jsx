@@ -50,7 +50,7 @@ const Detail = () => {
              <>
              <div className='container mx-auto my-4'>
                  <Zoom top>
-                     <img src={blog.image ?? noimage} style={{
+                     <img src={blog.image} onError={e => { e.currentTarget.src = noimage; }} style={{
                          'maxHeight' : '450px'
                      }} className='lg:w-3/4 w-full lg:px-32 md:px-16 px-2  my-3 mx-auto' />
                  </Zoom>
@@ -59,7 +59,7 @@ const Detail = () => {
                          <div>
                              <Bounce left>
                                  <h3 className="text-bold text-gray-200 text-bold text-2xl my-3">{blog.title}</h3>
-                                 <h3 className="text-bold text-gray-400 text-bold text-1l">{blog.category}</h3>
+                                 <h3 className="text-bold text-gray-400 text-bold text-1l">{blog.category.name}</h3>
                              </Bounce>
                          </div>
                          <div>

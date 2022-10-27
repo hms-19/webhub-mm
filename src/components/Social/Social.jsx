@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BiMailSend, BiMessageAlt, BiMobileAlt, BiX } from 'react-icons/bi'
 import { Bounce } from 'react-reveal';
-
+import $ from 'jquery'
 const Social = () => {
 
     const openInNewTab = url => {
         window.open(url, '_blank', 'noopener,noreferrer');
     };
 
-   const [socialOpen, setSocialOpen] = useState(false)
+  const [socialOpen, setSocialOpen] = useState(false)
+
+
   return (
     <>
         <div style={{

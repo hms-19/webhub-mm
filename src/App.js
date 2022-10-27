@@ -15,6 +15,7 @@ import Outline from "./components/Course/Outline";
 import Detail from "./components/Blog/Detail";
 import { useEffect, useState } from "react";
 import Social from "./components/Social/Social";
+import Category from "./components/Blog/Category";
 
 function App() {
 
@@ -38,8 +39,9 @@ function App() {
                 <Route path="courses" element={<Course />} />
                 <Route path="courses/:courseId" element={<Outline />} />
                 <Route path="testimonial" element={<Testimonial />} />
-                <Route path="blogs" element={<Blog />} />
-                <Route path="blogs/:blogId" element={<Detail />} />
+                <Route path="blogs" element={<Category />} />
+                <Route path="blogs/:categorySlug" element={<Blog />} />
+                <Route path="blogs/:categorySlug/:blogId" element={<Detail />} />
                 <Route path="aboutus" element={<About />} />
                 <Route path="contactus" element={<Contact />} />
                 <Route path='*' element={<NotFound />} />

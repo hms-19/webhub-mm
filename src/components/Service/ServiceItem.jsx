@@ -93,7 +93,7 @@ const ServiceItem = () => {
                     </Zoom>
                     <Zoom right>
                       <div>
-                        <img src={service.image ?? noimage} className="w-full object-cover transition duration-700 ease-in-out hover:scale-125" />
+                        <img src={service.image} onError={e => { e.currentTarget.src = noimage; }} className="w-full object-cover transition duration-700 ease-in-out hover:scale-125" />
                       </div>
                     </Zoom>
                   </div>

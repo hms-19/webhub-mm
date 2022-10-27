@@ -15,7 +15,7 @@ const About = () => {
         transition={{ duration: 0.4}}
         >
 
-        <section className="overflow-hidden py-5">
+        <section className="overflow-hidden ">
         <div className="container">
             <div className="flex flex-wrap justify-between items-center -mx-4">
                 <div className="w-full lg:w-6/12 px-4">
@@ -635,10 +635,10 @@ const About = () => {
                         </h2>
                     </Zoom>
                     <Zoom bottom>
-                        <p className="text-base text-body-color mb-8">
-                        Webhub has been established as a software company for more than a year. We not only provide software services for businesses, but also provide technical knowledge sharing and courses for young people
+                        <p className="text-base text-body-color mb-4">
+                        Webhub has been established as a software company for more than one year. We not only provide software services for businesses, but also provide technical knowledge sharing and courses for young people
                         </p>
-                        <p className="text-base text-body-color mb-12">
+                        <p className="text-base text-body-color mb-6">
                             If you need software for your business, you can trust and hire WHM. If you want to know more about WHM's services , you can contact us 24/7 leaving message or cotact us within office time by phone call.
                         </p>
                         <NavLink to={'/contactus'} >

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Button, Menu, Navbar } from 'react-daisyui'
 import {  NavLink, useLocation } from 'react-router-dom'
 import './Header.css'
-import { BiMenuAltRight } from "react-icons/bi";
+import { BiMenu, BiMenuAltRight } from "react-icons/bi";
 import { BiX } from "react-icons/bi";
 import $ from 'jquery'
 import logo from '../../assets/images/logo-shadow.svg'
@@ -109,7 +109,7 @@ const Header = () => {
                 <Button onClick={toggleSidebar} className='toggle-sidebar-btn' style={{
                   'display' : 'none'
                   }} shape="square">
-                  <BiMenuAltRight onClick={toggleSidebar} style={{
+                  <BiMenu onClick={toggleSidebar} style={{
                     'fontSize' : '36px'
                   }} />
                 </Button>

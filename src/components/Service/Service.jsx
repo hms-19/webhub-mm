@@ -18,7 +18,7 @@ const Service = () => {
   const fetchServices = async  () => {
     setIsLoading(true)
     let res = await api.get('/services')
-                .catch(err => err)
+                .catch(err =>console.log('Something Was  Wrong'))
 
     dispatch(setServices(res.data.data))
 
@@ -41,7 +41,7 @@ const Service = () => {
         >
 
           <div className="">
-            <div className="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+            <div className="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-7 ">
               <div className='relative grid gap-5 sm:grid-cols-1 lg:grid-cols-3 items-center'>
                 <div className='col-span-2'>
                   <div className="relative grid gap-5 sm:grid-cols-1 lg:grid-cols-2">
