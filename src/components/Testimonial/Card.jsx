@@ -20,10 +20,10 @@ const Card = () => {
                      testimonials.map((testimonial,index) => (
                 
                         <Slide key={testimonial.id} index={index} tabIndex="null">
-                            <div className="container px-1 md:px-6 mx-auto">
+                            <div className="mx-auto">
                             <section className="text-gray-400 text-center lg:text-left">
-                                <div className="md:px-12 my-8">
-                                    <div className="mx-auto xl:px-32">
+                                <div className="px-2 md:px-6 my-8">
+                                    <div className="mx-auto px-3 xl:px-32">
                                         <div className="relative">
                                         <div className="md:absolute md:top-3 md:right-3 ">
                                             <Bounce top>
@@ -34,8 +34,8 @@ const Card = () => {
                                             </Bounce>
                                         </div>
                                         <Bounce left>
-                                            <div className="md:mt-12 lg:mt-0 mb-12 lg:mb-0">
-                                                <div className="relative block rounded-lg shadow-lg px-6 py-12 md:px-12 lg:-mr-14">
+                                            <div className="md:mt-6 lg:mt-0 lg:mb-0">
+                                                <div className="relative block rounded-lg px-2 py-12 md:px-6 ">
                                                 <h2 className="text-3xl font-bold mb-2 text-primary">{testimonial.name}</h2>
                                                 <p className="font-semibold mb-4">{testimonial.field}</p>
                                                 <p className="text-gray-200 mb-6">

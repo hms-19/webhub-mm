@@ -45,14 +45,13 @@ const ServiceItem = () => {
 
         {
              JSON.stringify(service) !== '{}' ?
-            <div className="container mx-auto">
-            
-              <section className="mb-24 text-gray-800">
+            <div className="mx-auto">
+              <section className="mb-12 text-gray-800">
                 <div className="container mx-auto xl:px-18 text-center lg:text-left">
                   <div className="grid lg:grid-cols-2 items-center">
                     <Zoom left>
-                      <div className="mb-12 lg:mb-0 z-50">
-                        <div className="block rounded-lg shadow-lg px-6 py-12 md:px-12 lg:-mr-14 service-card">
+                      <div>
+                        <div className="block rounded-lg shadow-lg px-6 py-12 md:px-12 lg:-mr-10 service-card">
                           <h2 className="text-3xl font-bold mb-6">{service.name}</h2>
                           
               
@@ -93,7 +92,7 @@ const ServiceItem = () => {
                     </Zoom>
                     <Zoom right>
                       <div>
-                        <img src={service.image} onError={e => { e.currentTarget.src = noimage; }} className="w-full object-cover transition duration-700 ease-in-out hover:scale-125" />
+                        <img src={service.image} onError={e => { e.currentTarget.src = noimage; }} className="w-full object-cover transition duration-700 ease-in-out scale-90 hover:scale-100" />
                       </div>
                     </Zoom>
                   </div>

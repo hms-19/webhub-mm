@@ -46,7 +46,7 @@ useEffect(() => {
             </div>
             :
             categories.length > 0 ? 
-                <div className='container mx-auto'>
+                <div className='container mx-auto my-3 lg:my-8'>
                     <h2 className='text-center text-2xl font-bold mt-4 mb-12'>What type of blogs do you read?</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">

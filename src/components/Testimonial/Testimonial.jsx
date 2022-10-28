@@ -41,13 +41,13 @@ const Testimonial = () => {
     >
       {
         testimonials.length > 0 ?
-        <div>
+        <div className=''>
           <div className="flex items-center justify-between w-full absolute z-0">
               <div className="w-1/5" />
               <div className="w-4/6 mt-0" />
           </div>
           
-          <div className="xl:px-20 px-8 2xl:mx-auto 2xl:container relative z-40">
+          <div className="xl:px-20 mx-auto container relative z-10">
               <CarouselProvider naturalSlideWidth={100} isIntrinsicHeight={true} totalSlides={testimonials.length} className='flex flex-col'>
                   <Slider>
                     <Card />                    

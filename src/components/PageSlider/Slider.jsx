@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
 import { NavLink, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import './Slider.css'
 const Slider = () => {
 
   const [leftPage, setLeftPage] = useState('contactus')
@@ -37,7 +38,7 @@ const Slider = () => {
             rotate: [0, 0, 100, 100, 0],
             borderRadius: ["50%", "20%", "30%", "40%", "50%"],
             transition : {type: "spring", stiffness: 100} ,
-          }} className='rounded-full w-10 h-10 fixed top-1/2 left-1 md:left-3 z-50 border-2xl bg-primary flex justify-center items-center text-2xl hover:opacity-50 transition duration-300'>
+          }} className='rounded-full w-10 h-10 fixed bottom-4 left-6 md:top-1/2 md:left-5 z-50 border-2xl bg-primary flex justify-center items-center text-2xl  transition duration-300'>
               <BiChevronLeft />
           </motion.div>
         </NavLink>
@@ -47,7 +48,7 @@ const Slider = () => {
             rotate: [0, 0, 100, 100, 0],
             borderRadius: ["50%", "20%", "30%", "40%", "50%"],
             transition : {type: "spring", stiffness: 100} ,
-          }}   className='rounded-full w-10 h-10 fixed top-1/2 right-1 md:right-3 z-50 border-2xl bg-primary flex justify-center items-center text-2xl hover:opacity-50 transition duration-300'>
+          }}   className='rounded-full w-10 h-10 fixed bottom-4 setRight md:right-3 md:top-1/2  z-50 border-2xl bg-primary flex justify-center items-center text-2xl  transition duration-300'>
               <BiChevronRight />
           </motion.div>
         </NavLink>

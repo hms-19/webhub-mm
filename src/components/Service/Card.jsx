@@ -22,7 +22,7 @@ const Card = ({isLoading}) => {
             services.map(service => (
                 <div key={service.id}>
                     <Flip left>
-                    <NavLink to={`/services/${service.id}`}>
+                    <NavLink to={`/services/${service.slug}`}>
                     <div className="flex flex-col justify-between shadow shadow-transparent hover:shadow-purple-800 transition duration-700 overflow-hidden text-left  rounded  group">
                         <div className="p-5">
                             <div className="flex items-center justify-center w-10 h-10 mb-4">

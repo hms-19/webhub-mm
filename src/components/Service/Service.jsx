@@ -48,7 +48,7 @@ const Service = () => {
                       <Card isLoading={isLoading} />
                   </div>
                 </div>
-                <div className="flex flex-col justify-between overflow-hidden">
+                <div className="flex flex-col justify-center items-center">
                     <Flip right>
                       <img src={service}  />
                     </Flip>

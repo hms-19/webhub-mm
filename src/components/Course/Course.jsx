@@ -117,8 +117,8 @@ const Course = () => {
                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
                   <div className="">
                     <section className="text-gray-400">
-                      <div className="container px-5 py-6 mx-auto">
-                        <div className="flex flex-wrap -m-4">
+                      <div className="w-full py-6 mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                           <Card isLoading={isLoading} />                          
                         </div>
                       </div>

@@ -43,7 +43,7 @@ const Blog = () => {
         transition={{ duration: 0.4}}
         >
 
-      <section className="py-6  dark:text-gray-100">
+      <section className=" my-3 lg:my-8">
         <div className="container p-6 mx-auto space-y-6">
           <NavLink to='/blogs'>
             <Button color='primary' startIcon={<BiArrowBack className='text-xl' />}>All Categories</Button>
