@@ -26,8 +26,8 @@ const Home = () => {
           <div className="relative w-100 text-center text-gray-800">
             <div className=" block page-title pt-">
               <Zoom top>
-                <h1 className="text-primary text-4xl xs:text-5xl xl:text-6xl font-black  my-2 ">Webhub Myanmar </h1>
-                <h1 className="text-4xl xs:text-5xl xl:text-6xl text-indigo-100 mb-6 mt-8">For Your Business & Career</h1>
+                <h1 className="text-primary text-3xl xs:text-5xl xl:text-6xl font-black  my-4 ">Webhub Myanmar</h1>
+                <h1 className="text-3xl xs:text-5xl xl:text-6xl text-indigo-100 mb-6">For Your Business & Career</h1>
               </Zoom>
               <Bounce left>
                 <NavLink to='/services'>
