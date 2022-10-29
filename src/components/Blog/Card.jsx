@@ -56,14 +56,13 @@ const Card = ({isLoading}) => {
                     }
                 </div>
 
-                    {
-                        currentBlogs.length > 4 ?
-                        <div>
-                            <Pagination totalBlogs={blogs.length} blogPerPage={blogPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} />
-                        </div>
-                        :
-                        <p className="text-light font-thin italic my-4">This category has {currentBlogs.length} blogs</p>
-                    }
+                <p className="text-light font-thin italic my-6">This category has {currentBlogs.length} blogs</p>
+
+                <div>
+                    <Pagination totalBlogs={blogs.length} blogPerPage={blogPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+                </div>
+
+    
                     
                 </>
             : <h3 className="text-center mt-12">No Blogs Available</h3>
